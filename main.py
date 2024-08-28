@@ -2,7 +2,7 @@ import simpy
 import numpy as np
 import random
 
-NUM_EMPLOYEES: int = 2
+NUM_EMPLOYEES: int = 10
 AVG_SUPPORT_TIME: int = 5
 CUSTOMER_INTERVAL: int = 2
 SIM_TIME: int = 120
