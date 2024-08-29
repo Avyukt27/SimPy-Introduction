@@ -10,15 +10,15 @@ SIM_TIME: int = 120
 customers_handled: int = 0
 
 class CallCenter:
-    def __init__(self, env: simpy.Environment, num_employees: int, suppor_time: int) -> None:
+    def __init__(self, env: simpy.Environment, num_employees: int, support_time: int) -> None:
         self.env: simpy.Environment = env
         self.staff: int = simpy.Resource(env, num_employees)
-        self.support_time: int = suppor_time
+        self.support_time: int = support_time
     
     def support(self, customer: str):
         random_time = max(1, np.random.normal(self.support_time, 4))
         yield self.env.timeout(random_time)
-        print(f"Suppor finished for {customer} as {self.env.now:.2f}")
+        print(f"Support finished for {customer} as {self.env.now:.2f}")
 
 def customer(env: simpy.Environment, name: str, call_center: CallCenter):
     global customers_handled
